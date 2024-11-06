@@ -1,0 +1,65 @@
+ <!-- // Fitria Nurhaliza (105222035) // -->
+ <!-- // Amanda Weza Chania (105222018) // -->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>- QUIZ -</h1>
+</header>
+
+<div class="container">
+    <div id="home">
+        <h2>Selamat Datang di Aplikasi Quiz</h2>
+        <button class="button" onclick="showPage('rules')">Lihat Aturan</button>
+        
+    </div>
+
+    <div id="rules" class="hidden">
+        <h2>Aturan Permainan</h2>
+        <ul>
+            <li>Terdapat 10 pertanyaan yang harus dijawab.</li>
+            <li>Waktu untuk menjawab setiap pertanyaan adalah 30 detik.</li>
+            <li>Setiap jawaban benar akan mendapatkan 20 poin.</li>
+            <li>Jika waktu habis dan belum menjawab, pertanyaan akan dianggap salah.</li>
+            <li>Setelah menjawab pertanyaan terakhir, akan ditampilkan hasil akhir.</li>
+        </ul>
+        <button class="button" onclick="showPage('playerData')">Lanjutkan</button>
+    </div>
+
+    <div id="playerData" class="hidden">
+        <h2>Masukkan Data Pemain</h2>
+        <input type="text" id="name" placeholder="Nama" required>
+        <input type="text" id="nim" placeholder="NIM" required>
+        <button class="button" onclick="startQuiz()">Lanjutkan</button>
+    </div>
+
+    <div id="quiz" class="hidden">
+        <div class="question">
+            <div id="questionText"></div>
+            <div id="options" class="hidden"></div>
+            <input type="text" id="answerInput" class="hidden" placeholder="Jawaban Anda">
+        </div>
+        <button class="button" onclick="nextQuestion()">Berikutnya</button>
+        <div id="timer" style="color: red;"></div>
+    </div>
+
+    <div id="result" class="hidden">
+        <h2>Hasil Quiz</h2>
+        <p>Nama: <span id="resultName"></span></p>
+        <p>NIM: <span id="resultNIM"></span></p>
+        <p>Nilai Total: <span id="totalScore"></span></p>
+        <button class="button" onclick="showPage('home')">Kembali ke Beranda</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
